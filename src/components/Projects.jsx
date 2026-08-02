@@ -5,7 +5,7 @@ import arrowIcon from "../assets/arrow.png";
 import useInView from "../hooks/useInView";
 
 const projects = [
-  { title: "SiPinjam INSTIKI", image: project1, github: "https://github.com/", demo: "https://github.com/" },
+  { title: "SiPinjam INSTIKI", image: project1, github: "https://github.com/kadekgirendra/instiki-peminjaman-barang", demo: "https://github.com/" },
   { title: "Ari Futsal", image: project2, github: "https://github.com/Yordi16/futsal", demo: "https://arifutsal.my.id/login" },
   { title: "Portofolio V1", image: project3, github: "https://github.com/kadekgirendra/portofolio-website", demo: "https://jackdellvion.vercel.app/" },
 ];
