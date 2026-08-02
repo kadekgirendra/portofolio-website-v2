@@ -2,10 +2,13 @@ import aboutPic from "../assets/about-pic.png";
 import experienceIcon from "../assets/experience.png";
 import educationIcon from "../assets/education.png";
 import arrowIcon from "../assets/arrow.png";
+import useInView from "../hooks/useInView";
 
 export default function About() {
+  const [ref, inView] = useInView();
+
   return (
-    <section id="about">
+    <section id="about" ref={ref} className={`fade-section ${inView ? "fade-in-visible" : ""}`}>
       <p className="section__text__p1">Get To Know More</p>
       <h1 className="title">About Me</h1>
       <div className="section-container">

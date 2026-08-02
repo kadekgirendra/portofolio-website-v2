@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,7 +10,9 @@ export default function Navbar() {
   return (
     <>
       <nav id="desktop-nav">
-        <div className="logo">Girendra</div>
+        <div className="logo">
+          <img src={logo} alt="Giren logo" className="nav-logo-img" />
+        </div>
         <div>
           <ul className="nav-links">
             <li>
@@ -28,7 +31,9 @@ export default function Navbar() {
         </div>
       </nav>
       <nav id="hamburger-nav">
-        <div className="logo">Girendra</div>
+        <div className="logo">
+          <img src={logo} alt="Giren logo" className="nav-logo-img" />
+        </div>
         <div className="hamburger-menu">
           <div
             className={`hamburger-icon ${menuOpen ? "open" : ""}`}

@@ -1,15 +1,22 @@
 import profilePic from "../assets/profile-pic.png";
-
 import githubIcon from "../assets/github.png";
 import instagramIcon from "../assets/instagram.png";
+import { useEffect, useState } from "react";
 
 export default function Profile() {
+  const [reveal, setReveal] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setReveal(true), 2400);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section id="profile">
-      <div className="section__pic-container">
+      <div className={`section__pic-container profile-reveal ${reveal ? "profile-reveal-visible" : ""}`}>
         <img src={profilePic} alt="Kadek Girendra Profile Picture" />
       </div>
-      <div className="section__text">
+      <div className={`section__text profile-reveal profile-reveal-text ${reveal ? "profile-reveal-visible" : ""}`}>
         <p className="section__text__p1">Hello, I'm</p>
         <h1 className="title">Giren</h1>
         <p className="section__text__p2">Web Developer</p>

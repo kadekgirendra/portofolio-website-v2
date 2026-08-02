@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+
 import arrowIcon from "../assets/arrow.png";
+import useInView from "../hooks/useInView";
 
 const frontendSkills = [
   { name: "HTML", level: "Markup", icon: "html" },
@@ -23,26 +24,7 @@ function iconUrl(id) {
   return `https://skillicons.dev/icons?i=${id}&theme=light`;
 }
 
-function useInView(threshold = 0.2) {
-  const ref = useRef(null);
-  const [inView, setInView] = useState(false);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.disconnect();
-        }
-      },
-      { threshold }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [threshold]);
-
-  return [ref, inView];
-}
 
 function SkillGrid({ title, skills, delay = 0 }) {
   const [ref, inView] = useInView();
@@ -75,10 +57,11 @@ function SkillGrid({ title, skills, delay = 0 }) {
 }
 
 export default function Experience() {
+  const [ref, inView] = useInView();
   return (
-    <section id="experience">
+    <section id="experience" ref={ref} className={`fade-section ${inView ? "fade-in-visible" : ""}`}>
       <p className="section__text__p1">Explore My</p>
-      <h1 className="title">Experience</h1>
+      <h1 className="title">Experience Tools</h1>
       <div className="experience-details-container">
         <SkillGrid title="Frontend Development" skills={frontendSkills} delay={0} />
         <SkillGrid title="Backend Development" skills={backendSkills} delay={200} />

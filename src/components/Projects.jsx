@@ -2,16 +2,19 @@ import project1 from "../assets/project-1.png";
 import project2 from "../assets/project-2.png";
 import project3 from "../assets/project-3.png";
 import arrowIcon from "../assets/arrow.png";
+import useInView from "../hooks/useInView";
 
 const projects = [
-  { title: "Project One", image: project1, github: "https://github.com/", demo: "https://github.com/" },
+  { title: "SiPinjam INSTIKI", image: project1, github: "https://github.com/", demo: "https://github.com/" },
   { title: "Ari Futsal", image: project2, github: "https://github.com/Yordi16/futsal", demo: "https://arifutsal.my.id/login" },
   { title: "Portofolio V1", image: project3, github: "https://github.com/kadekgirendra/portofolio-website", demo: "https://jackdellvion.vercel.app/" },
 ];
 
 export default function Projects() {
+  const [ref, inView] = useInView();
+
   return (
-    <section id="projects">
+    <section id="projects" ref={ref} className={`fade-section ${inView ? "fade-in-visible" : ""}`}>
       <p className="section__text__p1">Browse My Recent</p>
       <h1 className="title">Projects</h1>
       <div className="experience-details-container">
