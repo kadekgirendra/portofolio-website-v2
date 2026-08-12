@@ -909,26 +909,26 @@ footer p {
     display: none !important;
   }
 
-  .skills-box::after,
-  .skills-box::before {
+  #experience * {
+    box-shadow: none !important;
+    background-image: none !important;
+    outline: none !important;
+  }
+
+  #experience .skills-box::after,
+  #experience .skills-box::before {
     display: none !important;
     content: none !important;
   }
 
-  .skills-group,
-  .skills-box {
-    box-shadow: none !important;
-    outline: none !important;
-    background: white !important;
-    background-image: none !important;
+  #experience .skills-group,
+  #experience .skills-box,
+  #experience .skill-card {
+    background-color: white !important;
   }
 
-  .skills-box {
+  #experience .skills-box {
     border: 1px solid rgba(163, 163, 163, 0.5) !important;
-  }
-
-  .skill-card {
-    box-shadow: none !important;
   }
 
   .color-container,
