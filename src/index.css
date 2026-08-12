@@ -914,6 +914,11 @@ footer p {
     transform: none !important;
     box-shadow: 0 4px 6px rgba(53, 53, 53, 0.08) !important;
   }
+    .skills-box {
+    box-shadow: 0 2px 8px rgba(53, 53, 53, 0.1) !important;
+    border: 1px solid rgba(53, 53, 53, 0.1) !important;
+    outline: none !important;
+  }
 }
 
 
